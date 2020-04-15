@@ -253,6 +253,7 @@ TCadena insertarAntes(TInfo i, TLocalizador loc, TCadena cad)
     res->anterior = NULL;
     res->siguiente = loc;
     cad->inicio = res;
+    loc->anterior = res;
   }
   else 
   {
@@ -261,6 +262,8 @@ TCadena insertarAntes(TInfo i, TLocalizador loc, TCadena cad)
     res->siguiente = loc;
     loc->anterior = res;
   }
+  res = NULL;
+  delete res;
   return cad;
 }
 
@@ -417,23 +420,26 @@ bool precedeEnCadena(TLocalizador loc1, TLocalizador loc2, TCadena cad)
 */
 TCadena insertarSegmentoDespues(TCadena sgm, TLocalizador loc, TCadena cad)
 {
-  if (esVaciaCadena(cad))
-  {
-    cad->inicio = sgm->inicio;
-    cad->final = sgm->final;
-  } else if (esFinalCadena(loc,cad))
-  {
-    loc->siguiente = sgm->inicio;
-    sgm->inicio->anterior = cad->final;
-    cad->final = sgm->final;
-  } else 
-  {
-    loc->siguiente->anterior = sgm->final;
-    sgm->final->siguiente = loc->siguiente;
-    loc->siguiente = sgm->inicio;
-    sgm->inicio->anterior = loc;
+  if (!esVaciaCadena(sgm)) {
+    if (esVaciaCadena(cad))
+    {
+      cad->inicio = sgm->inicio;
+      cad->final = sgm->final;
+    } else if (esFinalCadena(loc,cad))
+    {
+      loc->siguiente = sgm->inicio;
+      sgm->inicio->anterior = cad->final;
+      cad->final = sgm->final;
+    } else 
+    {
+      loc->siguiente->anterior = sgm->final;
+      sgm->final->siguiente = loc->siguiente;
+      loc->siguiente = sgm->inicio;
+      sgm->inicio->anterior = loc;
+    }
   }
   sgm->inicio = sgm->final = NULL;
+  liberarCadena(sgm);
   return cad;
 }
 
@@ -456,9 +462,11 @@ TCadena copiarSegmento(TLocalizador desde, TLocalizador hasta, TCadena cad)
   }
   else
   {
-    while (desde != hasta->siguiente)
+    TInfo aux;
+    while (precedeEnCadena(desde, hasta, cad))
     {
-      insertarAlFinal(desde->dato, x);
+      aux = copiaInfo(desde->dato);
+      insertarAlFinal(aux, x);
       desde = desde->siguiente;
     }
   }
