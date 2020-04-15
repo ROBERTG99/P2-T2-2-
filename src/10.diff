@@ -1,0 +1,120 @@
+0a1,105
+> ==22858== Invalid read of size 8
+> ==22858==    at 0x40303E: imprimirCadena(repCadena*) (cadena.cpp:289)
+> ==22858==    by 0x401AAA: main (principal.cpp:217)
+> ==22858==  Address 0x4dbbe40 is 0 bytes inside a block of size 24 free'd
+> ==22858==    at 0x483A0D6: operator delete(void*, unsigned long) (vg_replace_malloc.c:595)
+> ==22858==    by 0x402AE2: liberarCadena(repCadena*) (cadena.cpp:52)
+> ==22858==    by 0x403310: insertarSegmentoDespues(repCadena*, nodo*, repCadena*) (cadena.cpp:379)
+> ==22858==    by 0x401CB4: main (principal.cpp:237)
+> ==22858==  Block was alloc'd at
+> ==22858==    at 0x4838E86: operator new(unsigned long) (vg_replace_malloc.c:344)
+> ==22858==    by 0x402D4A: insertarAlFinal(repInfo*, repCadena*) (cadena.cpp:197)
+> ==22858==    by 0x401311: leerCadena() (principal.cpp:81)
+> ==22858==    by 0x401C9E: main (principal.cpp:237)
+> ==22858== 
+> ==22858== Invalid read of size 8
+> ==22858==    at 0x4028E1: realInfo(repInfo*) (info.cpp:40)
+> ==22858==    by 0x403048: imprimirCadena(repCadena*) (cadena.cpp:289)
+> ==22858==    by 0x401AAA: main (principal.cpp:217)
+> ==22858==  Address 0x4dbbdf8 is 8 bytes inside a block of size 16 free'd
+> ==22858==    at 0x4839A0C: free (vg_replace_malloc.c:540)
+> ==22858==    by 0x4028C1: liberarInfo(repInfo*) (info.cpp:36)
+> ==22858==    by 0x402ACC: liberarCadena(repCadena*) (cadena.cpp:51)
+> ==22858==    by 0x403310: insertarSegmentoDespues(repCadena*, nodo*, repCadena*) (cadena.cpp:379)
+> ==22858==    by 0x401CB4: main (principal.cpp:237)
+> ==22858==  Block was alloc'd at
+> ==22858==    at 0x483880B: malloc (vg_replace_malloc.c:309)
+> ==22858==    by 0x402852: crearInfo(unsigned int, double) (info.cpp:24)
+> ==22858==    by 0x4012CB: leerInfo() (principal.cpp:67)
+> ==22858==    by 0x4012FA: leerCadena() (principal.cpp:80)
+> ==22858==    by 0x401C9E: main (principal.cpp:237)
+> ==22858== 
+> ==22858== Invalid read of size 8
+> ==22858==    at 0x403052: imprimirCadena(repCadena*) (cadena.cpp:289)
+> ==22858==    by 0x401AAA: main (principal.cpp:217)
+> ==22858==  Address 0x4dbbe40 is 0 bytes inside a block of size 24 free'd
+> ==22858==    at 0x483A0D6: operator delete(void*, unsigned long) (vg_replace_malloc.c:595)
+> ==22858==    by 0x402AE2: liberarCadena(repCadena*) (cadena.cpp:52)
+> ==22858==    by 0x403310: insertarSegmentoDespues(repCadena*, nodo*, repCadena*) (cadena.cpp:379)
+> ==22858==    by 0x401CB4: main (principal.cpp:237)
+> ==22858==  Block was alloc'd at
+> ==22858==    at 0x4838E86: operator new(unsigned long) (vg_replace_malloc.c:344)
+> ==22858==    by 0x402D4A: insertarAlFinal(repInfo*, repCadena*) (cadena.cpp:197)
+> ==22858==    by 0x401311: leerCadena() (principal.cpp:81)
+> ==22858==    by 0x401C9E: main (principal.cpp:237)
+> ==22858== 
+> ==22858== Invalid read of size 4
+> ==22858==    at 0x4028D1: natInfo(repInfo*) (info.cpp:38)
+> ==22858==    by 0x40305C: imprimirCadena(repCadena*) (cadena.cpp:289)
+> ==22858==    by 0x401AAA: main (principal.cpp:217)
+> ==22858==  Address 0x4dbbdf0 is 0 bytes inside a block of size 16 free'd
+> ==22858==    at 0x4839A0C: free (vg_replace_malloc.c:540)
+> ==22858==    by 0x4028C1: liberarInfo(repInfo*) (info.cpp:36)
+> ==22858==    by 0x402ACC: liberarCadena(repCadena*) (cadena.cpp:51)
+> ==22858==    by 0x403310: insertarSegmentoDespues(repCadena*, nodo*, repCadena*) (cadena.cpp:379)
+> ==22858==    by 0x401CB4: main (principal.cpp:237)
+> ==22858==  Block was alloc'd at
+> ==22858==    at 0x483880B: malloc (vg_replace_malloc.c:309)
+> ==22858==    by 0x402852: crearInfo(unsigned int, double) (info.cpp:24)
+> ==22858==    by 0x4012CB: leerInfo() (principal.cpp:67)
+> ==22858==    by 0x4012FA: leerCadena() (principal.cpp:80)
+> ==22858==    by 0x401C9E: main (principal.cpp:237)
+> ==22858== 
+> ==22858== Invalid read of size 8
+> ==22858==    at 0x403077: imprimirCadena(repCadena*) (cadena.cpp:290)
+> ==22858==    by 0x401AAA: main (principal.cpp:217)
+> ==22858==  Address 0x4dbbe50 is 16 bytes inside a block of size 24 free'd
+> ==22858==    at 0x483A0D6: operator delete(void*, unsigned long) (vg_replace_malloc.c:595)
+> ==22858==    by 0x402AE2: liberarCadena(repCadena*) (cadena.cpp:52)
+> ==22858==    by 0x403310: insertarSegmentoDespues(repCadena*, nodo*, repCadena*) (cadena.cpp:379)
+> ==22858==    by 0x401CB4: main (principal.cpp:237)
+> ==22858==  Block was alloc'd at
+> ==22858==    at 0x4838E86: operator new(unsigned long) (vg_replace_malloc.c:344)
+> ==22858==    by 0x402D4A: insertarAlFinal(repInfo*, repCadena*) (cadena.cpp:197)
+> ==22858==    by 0x401311: leerCadena() (principal.cpp:81)
+> ==22858==    by 0x401C9E: main (principal.cpp:237)
+> ==22858== 
+> ==22858== Invalid write of size 8
+> ==22858==    at 0x40326C: insertarSegmentoDespues(repCadena*, nodo*, repCadena*) (cadena.cpp:365)
+> ==22858==    by 0x401CB4: main (principal.cpp:237)
+> ==22858==  Address 0x4dbbe50 is 16 bytes inside a block of size 24 free'd
+> ==22858==    at 0x483A0D6: operator delete(void*, unsigned long) (vg_replace_malloc.c:595)
+> ==22858==    by 0x402AE2: liberarCadena(repCadena*) (cadena.cpp:52)
+> ==22858==    by 0x403310: insertarSegmentoDespues(repCadena*, nodo*, repCadena*) (cadena.cpp:379)
+> ==22858==    by 0x401CB4: main (principal.cpp:237)
+> ==22858==  Block was alloc'd at
+> ==22858==    at 0x4838E86: operator new(unsigned long) (vg_replace_malloc.c:344)
+> ==22858==    by 0x402D4A: insertarAlFinal(repInfo*, repCadena*) (cadena.cpp:197)
+> ==22858==    by 0x401311: leerCadena() (principal.cpp:81)
+> ==22858==    by 0x401C9E: main (principal.cpp:237)
+> ==22858== 
+> ==22858== Invalid write of size 8
+> ==22858==    at 0x40327B: insertarSegmentoDespues(repCadena*, nodo*, repCadena*) (cadena.cpp:366)
+> ==22858==    by 0x401CB4: main (principal.cpp:237)
+> ==22858==  Address 0x8 is not stack'd, malloc'd or (recently) free'd
+> ==22858== 
+> ==22858== 
+> ==22858== Process terminating with default action of signal 11 (SIGSEGV): dumping core
+> ==22858==  Access not within mapped region at address 0x8
+> ==22858==    at 0x40327B: insertarSegmentoDespues(repCadena*, nodo*, repCadena*) (cadena.cpp:366)
+> ==22858==    by 0x401CB4: main (principal.cpp:237)
+> ==22858==  If you believe this happened as a result of a stack
+> ==22858==  overflow in your program's main thread (unlikely but
+> ==22858==  possible), you can try to increase the size of the
+> ==22858==  main thread stack using the --main-stacksize= flag.
+> ==22858==  The main thread stack size used in this run was 8388608.
+7,17c112
+< 7>Segmento insertado después de loc.
+< 8>(5,3.40)
+< 9>Removido.
+< 10>Segmento insertado después de loc.
+< 11>(5,3.40)(8,9.40)(9,2.60)
+< 12>loc al inicio.
+< 13>Segmento insertado después de loc.
+< 14>(5,3.40)(8,9.40)(9,2.60)
+< 15>Segmento insertado después de loc.
+< 16>(5,3.40)(6,5.20)(7,0.90)(8,9.40)(9,2.60)
+< 17>Fin.
+---
+> 7>timeout: the monitored command dumped core

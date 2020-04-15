@@ -1,0 +1,7 @@
+28a29,34
+> ==6009== 16 bytes in 1 blocks are definitely lost in loss record 1 of 1
+> ==6009==    at 0x4838E86: operator new(unsigned long) (vg_replace_malloc.c:344)
+> ==6009==    by 0x402A63: crearCadena() (cadena.cpp:35)
+> ==6009==    by 0x4012E2: leerCadena() (principal.cpp:78)
+> ==6009==    by 0x401C9E: main (principal.cpp:237)
+> ==6009== 

@@ -1,0 +1,89 @@
+==28107== Invalid read of size 8
+==28107==    at 0x402AB3: liberarCadena(repCadena*) (cadena.cpp:51)
+==28107==    by 0x402773: main (principal.cpp:359)
+==28107==  Address 0x4dbbeb0 is 16 bytes inside a block of size 24 free'd
+==28107==    at 0x483A0D6: operator delete(void*, unsigned long) (vg_replace_malloc.c:595)
+==28107==    by 0x402AE2: liberarCadena(repCadena*) (cadena.cpp:53)
+==28107==    by 0x403377: insertarSegmentoDespues(repCadena*, nodo*, repCadena*) (cadena.cpp:444)
+==28107==    by 0x401CB4: main (principal.cpp:237)
+==28107==  Block was alloc'd at
+==28107==    at 0x4838E86: operator new(unsigned long) (vg_replace_malloc.c:344)
+==28107==    by 0x402D4A: insertarAlFinal(repInfo*, repCadena*) (cadena.cpp:223)
+==28107==    by 0x401311: leerCadena() (principal.cpp:81)
+==28107==    by 0x401C9E: main (principal.cpp:237)
+==28107== 
+==28107== Invalid read of size 8
+==28107==    at 0x402AC2: liberarCadena(repCadena*) (cadena.cpp:52)
+==28107==    by 0x402773: main (principal.cpp:359)
+==28107==  Address 0x4dbbea0 is 0 bytes inside a block of size 24 free'd
+==28107==    at 0x483A0D6: operator delete(void*, unsigned long) (vg_replace_malloc.c:595)
+==28107==    by 0x402AE2: liberarCadena(repCadena*) (cadena.cpp:53)
+==28107==    by 0x403377: insertarSegmentoDespues(repCadena*, nodo*, repCadena*) (cadena.cpp:444)
+==28107==    by 0x401CB4: main (principal.cpp:237)
+==28107==  Block was alloc'd at
+==28107==    at 0x4838E86: operator new(unsigned long) (vg_replace_malloc.c:344)
+==28107==    by 0x402D4A: insertarAlFinal(repInfo*, repCadena*) (cadena.cpp:223)
+==28107==    by 0x401311: leerCadena() (principal.cpp:81)
+==28107==    by 0x401C9E: main (principal.cpp:237)
+==28107== 
+==28107== Invalid free() / delete / delete[] / realloc()
+==28107==    at 0x4839A0C: free (vg_replace_malloc.c:540)
+==28107==    by 0x4028C1: liberarInfo(repInfo*) (info.cpp:36)
+==28107==    by 0x402ACC: liberarCadena(repCadena*) (cadena.cpp:52)
+==28107==    by 0x402773: main (principal.cpp:359)
+==28107==  Address 0x4dbbe50 is 0 bytes inside a block of size 16 free'd
+==28107==    at 0x4839A0C: free (vg_replace_malloc.c:540)
+==28107==    by 0x4028C1: liberarInfo(repInfo*) (info.cpp:36)
+==28107==    by 0x402ACC: liberarCadena(repCadena*) (cadena.cpp:52)
+==28107==    by 0x403377: insertarSegmentoDespues(repCadena*, nodo*, repCadena*) (cadena.cpp:444)
+==28107==    by 0x401CB4: main (principal.cpp:237)
+==28107==  Block was alloc'd at
+==28107==    at 0x483880B: malloc (vg_replace_malloc.c:309)
+==28107==    by 0x402852: crearInfo(unsigned int, double) (info.cpp:24)
+==28107==    by 0x4012CB: leerInfo() (principal.cpp:67)
+==28107==    by 0x4012FA: leerCadena() (principal.cpp:80)
+==28107==    by 0x401C9E: main (principal.cpp:237)
+==28107== 
+==28107== Invalid free() / delete / delete[] / realloc()
+==28107==    at 0x483A0D6: operator delete(void*, unsigned long) (vg_replace_malloc.c:595)
+==28107==    by 0x402AE2: liberarCadena(repCadena*) (cadena.cpp:53)
+==28107==    by 0x402773: main (principal.cpp:359)
+==28107==  Address 0x4dbbea0 is 0 bytes inside a block of size 24 free'd
+==28107==    at 0x483A0D6: operator delete(void*, unsigned long) (vg_replace_malloc.c:595)
+==28107==    by 0x402AE2: liberarCadena(repCadena*) (cadena.cpp:53)
+==28107==    by 0x403377: insertarSegmentoDespues(repCadena*, nodo*, repCadena*) (cadena.cpp:444)
+==28107==    by 0x401CB4: main (principal.cpp:237)
+==28107==  Block was alloc'd at
+==28107==    at 0x4838E86: operator new(unsigned long) (vg_replace_malloc.c:344)
+==28107==    by 0x402D4A: insertarAlFinal(repInfo*, repCadena*) (cadena.cpp:223)
+==28107==    by 0x401311: leerCadena() (principal.cpp:81)
+==28107==    by 0x401C9E: main (principal.cpp:237)
+==28107== 
+1>#  Implementar localizadorEnCadena, precedeEnCadena.
+2>loc no pertenece a cad.
+3>Insertado al final.
+4>loc no pertenece a cad.
+5>loc al final.
+6>loc pertenece a cad.
+7>loc al siguiente.
+8>loc no pertenece a cad.
+9>loc1 no precede a loc.
+10>loc al final.
+11>loc1 precede a loc.
+12>loc1 no precede a loc.
+13>loc1 no precede a loc.
+14>Segmento insertado después de loc.
+15>loc1 precede a loc.
+16>loc1 no precede a loc.
+17>loc1 no precede a loc.
+18>loc al siguiente.
+19>loc1 no precede a loc.
+20>loc1 no precede a loc.
+21>loc1 no precede a loc.
+22>loc al final.
+23>loc1 no precede a loc.
+24>loc1 no precede a loc.
+25>loc al anterior.
+26>loc1 no precede a loc.
+27>loc1 no precede a loc.
+28>Fin.

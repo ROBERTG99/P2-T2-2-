@@ -1,0 +1,21 @@
+0a1
+> principal: principal.cpp:181: int main(): Assertion `localizadorEnCadena(loc, cad)' failed.
+15c16
+< 15>(4,3.10)
+---
+> 15>(5,2.80)
+17c18
+< 17>(4,3.10)
+---
+> 17>(5,2.80)
+27c28
+< 27>(8,2.90)
+---
+> 27>(5,2.80)
+29,32c30
+< 29>(4,3.10)
+< 30>loc al siguiente.
+< 31>(5,2.80)
+< 32>Fin.
+---
+> 29>timeout: the monitored command dumped core
