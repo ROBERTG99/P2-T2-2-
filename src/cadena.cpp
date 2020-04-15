@@ -522,7 +522,6 @@ TCadena intercambiar(TLocalizador loc1, TLocalizador loc2, TCadena cad)
   aux = loc1->dato;
   loc1->dato = loc2->dato;
   loc2->dato = aux;
-  liberarInfo(aux);
   return cad;
 }
 
@@ -605,18 +604,17 @@ TLocalizador anteriorClave(nat clave, TLocalizador loc, TCadena cad)
 */
 TLocalizador menorEnCadena(TLocalizador loc, TCadena cad)
 {
-  TLocalizador res;
-  nat x = 0;
-  while (loc->siguiente != cad->final->siguiente)
+  TLocalizador res = loc;
+  TLocalizador aux = loc;
+  nat x = natInfo(loc->dato);
+  while (aux != NULL)
   {
-    if (natInfo(loc->dato) > x)
+    if (natInfo(aux->dato) < x)
     {
-      x = natInfo(loc->dato);
-      res = loc;
+      x = natInfo(aux->dato);
+      res = aux;
     }
-    loc = loc->siguiente;
+    aux= aux->siguiente;
   }
   return res;
 }
-
-/*MAL*/
