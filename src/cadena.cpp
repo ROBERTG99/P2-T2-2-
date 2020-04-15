@@ -484,26 +484,30 @@ TCadena copiarSegmento(TLocalizador desde, TLocalizador hasta, TCadena cad)
 */
 TCadena borrarSegmento(TLocalizador desde, TLocalizador hasta, TCadena cad)
 {
-  TLocalizador a_borrar;
-  if (esInicioCadena(desde, cad))
-  {
-    while (cad->inicio != hasta)
+  if (!esVaciaCadena(cad)){
+    TLocalizador a_borrar;
+    if (esInicioCadena(desde, cad))
     {
-      a_borrar = cad->inicio;
-      cad->inicio = cad->inicio->siguiente;
-      liberarInfo(a_borrar->dato);
+      while (cad->inicio != hasta)
+      {
+        a_borrar = cad->inicio;
+        cad->inicio = cad->inicio->siguiente;
+        liberarInfo(a_borrar->dato);
+      }
     }
-  }
-  else
-  {
-    while (desde != hasta->siguiente)
+    else
     {
-      a_borrar = desde;
-      desde = desde->siguiente;
-      liberarInfo(a_borrar->dato);
+      while (desde->anterior != hasta)
+      {
+        a_borrar = desde;
+        desde = desde->siguiente;
+        liberarInfo(a_borrar->dato);
+      }
     }
+    delete a_borrar;
   }
-  delete a_borrar;
+  delete desde;
+  delete hasta;
   return cad;
 }
 
