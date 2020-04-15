@@ -15,7 +15,7 @@
 */
 bool pertenece(nat elem, TCadena cad) {
   TLocalizador x = inicioCadena(cad);
-  siguienteClave(elem, x, cad);
+  x = siguienteClave(elem, x, cad);
   return (x != NULL);
 }
   /*x = cad->inicio;
@@ -35,7 +35,6 @@ nat longitud(TCadena cad) {
   nat aux = 0;
   c = inicioCadena(cad);
   if (!esVaciaCadena(cad)) {
-    aux = 1;
     while (c != NULL) {
       c = siguiente(c, cad);
       aux = aux + 1;
@@ -53,14 +52,14 @@ nat longitud(TCadena cad) {
 */
 bool estaOrdenadaPorNaturales(TCadena cad)  {
   bool res;
-  TLocalizador c, d;
-  c = inicioCadena(cad);
-  d = c;
-  d = siguiente(d, cad);
   if (esVaciaCadena(cad)) {
     res = true;
   } else {
-    while ((c != nullptr) && (natInfo(infoCadena(d, cad)) > natInfo(infoCadena(c, cad)))) {
+    TLocalizador c, d;
+    c = inicioCadena(cad);
+    d = c;
+    d = siguiente(d, cad);
+    while ((d != nullptr) && (natInfo(infoCadena(d, cad)) >= natInfo(infoCadena(c, cad)))) {
       c = siguiente(c, cad);
       d = siguiente(d, cad);
     }
@@ -76,10 +75,10 @@ bool estaOrdenadaPorNaturales(TCadena cad)  {
 bool hayNatsRepetidos(TCadena cad) {
   TLocalizador aux;
   aux = inicioCadena(cad);
-  while ((aux != nullptr) && (siguienteClave(natInfo(infoCadena(aux, cad)), aux, cad) == nullptr)) {
+  while ((aux != NULL) && (siguienteClave(natInfo(infoCadena(aux, cad)), aux, cad) == NULL)) {
     aux = siguiente(aux, cad);
   }
-  return (aux != nullptr);
+  return (aux != NULL);
 }
 
 
