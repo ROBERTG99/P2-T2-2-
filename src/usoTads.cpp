@@ -73,14 +73,37 @@ bool estaOrdenadaPorNaturales(TCadena cad)  {
   elementos de 'cad' son iguales.  
 */
 bool hayNatsRepetidos(TCadena cad) {
-  TLocalizador aux;
-  aux = inicioCadena(cad);
-  while ((aux != NULL) && (siguienteClave(natInfo(infoCadena(aux, cad)), aux, cad) == NULL)) {
+  bool res = false;
+/* while ((aux != NULL) && (siguienteClave(natInfo(infoCadena(aux, cad)), aux, cad) == NULL)) {
     aux = siguiente(aux, cad);
   }
   return (aux != NULL);
+}*/
+  if (!esVaciaCadena(cad))  
+  {
+    TLocalizador aux;
+    aux = inicioCadena(cad);
+    if (aux != finalCadena(cad)) {
+      TInfo info;
+      nat n;
+      info = infoCadena(aux, cad);
+      n = natInfo(info);
+      while ((aux != NULL)  && (!res))
+      {
+        aux = siguiente(aux, cad);
+        if (aux != NULL){
+          res = (siguienteClave( n, aux, cad) != NULL);
+          info = infoCadena(aux, cad);
+          n = natInfo(info);
+        }
+      }
+    } else
+    {
+      res = false;
+    } 
+  }
+  return res;
 }
-
 
 /*
   Devuelve 'true' si y solo si 'c1' y 'c2' son iguales (es decir, si los
@@ -95,13 +118,18 @@ bool sonIgualesCadena(TCadena c1, TCadena c2) {
   } else if (((esVaciaCadena(c1)) && (!esVaciaCadena(c2))) || ((!esVaciaCadena(c1)) && (esVaciaCadena(c2)))) {
       return false;
   } else {
-    TLocalizador i = inicioCadena(c1);
-    TLocalizador j = inicioCadena(c2);
-    while (((i != nullptr) || (j != nullptr)) && (sonIgualesInfo(infoCadena(i, c1), infoCadena(j, c2)))) {
-      i = siguiente(i, c1);
-      j = siguiente(j, c2);
+    if (longitud(c1) != longitud(c2))
+    {
+      return false;
+    } else {
+      TLocalizador i = inicioCadena(c1);
+      TLocalizador j = inicioCadena(c2);
+      while (((i != NULL) || (j != NULL)) && (sonIgualesInfo((infoCadena(i, c1)), (infoCadena(j, c2))))) {
+        i = siguiente(i, c1);
+        j = siguiente(j, c2);
+      }
+      return ((i == NULL) && (j == NULL));
     }
-    return ((i == nullptr) && (j == nullptr));
   }
 }
 
