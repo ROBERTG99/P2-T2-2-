@@ -230,8 +230,12 @@ TCadena subCadena(nat menor, nat mayor, TCadena cad)  {
   TCadena res;
   i = inicioCadena(cad);
   j = finalCadena(cad);
-  siguienteClave(menor,i,cad);
-  anteriorClave(mayor,j,cad);
+  if (natInfo(infoCadena(i,cad)) != menor)  {
+    i = siguienteClave(menor,i,cad);
+  }
+  if (natInfo(infoCadena(j,cad)) != mayor) { 
+    j = anteriorClave(mayor,j,cad);
+  }
   res = copiarSegmento(i,j,cad);
   return res;
 }
