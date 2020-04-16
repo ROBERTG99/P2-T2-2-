@@ -158,14 +158,26 @@ TCadena concatenar(TCadena c1, TCadena c2){
   elementos de 'cad'.
 */
 TCadena ordenar(TCadena cad){
-  TLocalizador a, b;
-  a = inicioCadena(cad);
-  while (a != nullptr) {
-    b = menorEnCadena(a, cad);
-    if (b < a) {
-      intercambiar (a, b, cad);
+  if ((!esVaciaCadena(cad)) && (longitud(cad) > 1)) {
+    TLocalizador loc1, loc2, loc3;
+    loc1 = loc3 = finalCadena(cad);
+    loc2 = anterior(loc1, cad);
+    while (loc3 != NULL){
+      loc1 = loc3;
+      while (loc2 != NULL) {
+        nat n1, n2;
+        n1 = natInfo(infoCadena(loc1, cad));
+        n2 = natInfo(infoCadena(loc2, cad));
+        if (n2 > n1)  {
+          intercambiar(loc1,loc2,cad);
+        }
+        loc1 = anterior(loc1, cad);
+        loc2 = anterior(loc2, cad);
+      }
+      loc3 = anterior(loc3, cad);
     }
-    a = siguiente(a, cad);
+  } while (!estaOrdenadaPorNaturales(cad)){
+    ordenar(cad);
   }
   return cad;
 }
