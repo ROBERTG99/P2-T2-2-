@@ -193,13 +193,24 @@ TCadena ordenar(TCadena cad){
 TCadena cambiarTodos(nat original, nat nuevo, TCadena cad)  {
   TLocalizador aux;
   aux = inicioCadena(cad);;
-  while (aux != NULL) 
+  if (original != nuevo) 
   {
-    TInfo i =  nullptr;
-    double j = realInfo(infoCadena(aux, cad));
-    i = crearInfo( nuevo, j);
-    cambiarEnCadena(i,aux,cad);
-    siguienteClave(original,aux,cad);
+    while (aux != NULL)   {
+      if (natInfo(infoCadena(aux, cad)) != original) 
+      {
+        aux = siguienteClave(original,aux,cad);
+      }
+      if (aux != NULL) {
+        TInfo i =  NULL;
+        TInfo x = infoCadena(aux,cad);
+        double j = realInfo(infoCadena(aux, cad));
+        i = crearInfo(nuevo, j);
+        cad = cambiarEnCadena(i,aux,cad);
+        aux = siguienteClave(original,aux,cad);
+        i = NULL;
+        liberarInfo(x);
+      }
+    }
   }
   return cad;
 }
